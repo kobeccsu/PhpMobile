@@ -19,7 +19,15 @@ class SqlHelp
     public function exec_sql($sql){
         $con = $this->create_connection();
         $result = mysqli_query($con, $sql);
-
         return $result;
+    }
+
+    public function getAll($sql){
+        $result = $this->exec_sql($sql);
+        $data = array();
+        while ($currRow = mysqli_fetch_array($result)){
+            $data[] = $currRow;
+        }
+        return $data;
     }
 }

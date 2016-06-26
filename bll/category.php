@@ -11,7 +11,7 @@ class Category{
     public static function getMallCategory()
     {
         $cate = new SqlHelp();
-        return $cate->exec_sql("select * from mall_category");
+        return $cate->getAll("select * from mall_category");
     }
 }
 

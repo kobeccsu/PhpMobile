@@ -12,12 +12,12 @@ require ("SqlHelp.php");
     <meta name="format-detection" content="telephone=no">
 </head>
     <body>
-        <ul>
+        <div>
             <?php $mallList = Category::getMallCategory(); ?>
-            <?php while($item = mysqli_fetch_array($mallList)){?>
-                <li><?php echo $item['name'] ?></li>
+            <?php foreach($mallList as $item) {?>
+                <div style="width: 4.625rem; height: 5.375rem;background-image: url('http://img.alicdn.com/bao/uploaded/i2/839158732/TB2n5kVppXXXXanXXXXXXXXXXXX_!!839158732.jpg_q50.jpg');background-size: contain;"><?php echo $item['name'] ?></div>
             <?php } ?>
 
-        </ul>
+        </div>
     </body>
 </html>
