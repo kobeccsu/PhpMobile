@@ -19,6 +19,7 @@ class SqlHelp
     public function exec_sql($sql){
         $con = $this->create_connection();
         $result = mysqli_query($con, $sql);
+
         return $result;
     }
 }
