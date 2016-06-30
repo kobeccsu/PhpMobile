@@ -15,9 +15,12 @@ require ("SqlHelp.php");
         <div>
             <?php $mallList = Category::getMallCategory(); ?>
             <?php foreach($mallList as $item) {?>
-                <div style="width: 4.625rem; height: 5.375rem;background-image: url('http://img.alicdn.com/bao/uploaded/i2/839158732/TB2n5kVppXXXXanXXXXXXXXXXXX_!!839158732.jpg_q50.jpg');background-size: contain;"><?php echo $item['name'] ?></div>
+                <div><?php echo $item['name'] ?></div>
+                <div style="width: 4.625rem; height: 5rem;
+                background-image: url('http://img.alicdn.com/bao/uploaded/i2/839158732/TB2n5kVppXXXXanXXXXXXXXXXXX_!!839158732.jpg_q50.jpg');
+                background-size: contain;"></div>
             <?php } ?>
-
         </div>
+        &copy;别想只管去做
     </body>
 </html>
