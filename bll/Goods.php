@@ -11,6 +11,6 @@ class Goods
     public function getAllGoods()
     {
         $cate = new SqlHelp();
-        return $cate->getAll("select id from mall_goods");
+        return $cate->getAll("select id, name, description, category_id, main_url from mall_goods");
     }
 }

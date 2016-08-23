@@ -34,6 +34,15 @@
         <meta name="format-detection" content="telephone=no">
     </head>
     <body>
+        <?php session_start(); ?>
+        <div id="loginStatus" style="float:right">
+            <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : '[未登陆]' ?>
+            <?php if(isset($_SESSION['username'])) {?>
+                <form action="../controller/logout.php" method="post">
+                    <input type="submit" value="登出" />
+                </form>
+            <?php }?>
+        </div>
         <div class="main">
             <h1>您需要登陆我们的系统</h1>
             <form class="form" action="../controller/loginHandler.php" method="post" enctype="application/x-www-form-urlencoded">

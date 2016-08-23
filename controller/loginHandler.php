@@ -9,4 +9,11 @@
 $name = $_POST["username"];
 $password = $_POST["password"];
 
-echo "name:$name,password:$password";
+if ($name == 'zhoulei' && $password == '123') {
+    session_start();
+    $_SESSION["username"] = $name;
+
+    return json_encode(array('msg'=>'登陆成功'));
+}
+
+return json_encode(array('msg'=>'登陆失败'));

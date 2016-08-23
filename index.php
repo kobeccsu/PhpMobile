@@ -1,5 +1,6 @@
 ﻿<?php
 require ("bll/category.php");
+require ("bll/Goods.php");
 require ("SqlHelp.php");
 ?>
 <!DOCTYPE html>
@@ -13,13 +14,28 @@ require ("SqlHelp.php");
 </head>
     <body>
         <div>
-            <?php $mallList = Category::getMallCategory(); ?>
-            <?php foreach($mallList as $item) {?>
+            <?php $mallList = Category::getMallCategory();
+                $goodBLL = new Goods();
+                $good = $goodBLL->getAllGoods();
+            ?>
+            <?php foreach($mallList as $item)
+            {
+            ?>
                 <div><?php echo $item['name'] ?></div>
-                <div style="width: 4.625rem; height: 5rem;
-                background-image: url('http://img.alicdn.com/bao/uploaded/i2/839158732/TB2n5kVppXXXXanXXXXXXXXXXXX_!!839158732.jpg_q50.jpg');
-                background-size: contain;"></div>
-            <?php } ?>
+
+                <?php foreach($good as $itergood){
+                    if ($itergood['category_id'] == $item['id']){?>
+                        <?php echo $itergood['name'] ?>
+                            <a href="<?php echo 'views/goodsDetail.php?id=' . $itergood['id'] ?>">
+                                <div style="width: 4.625rem; height: 5rem;
+                                background-image: url('<?php echo $itergood['main_url'] ?>');
+                                background-size: contain;"></div></a>
+                    <?php
+                    }
+            }?>
+            <?php
+            }
+            ?>
         </div>
         &copy;别想只管去做
     </body>
