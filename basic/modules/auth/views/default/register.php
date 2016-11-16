@@ -39,6 +39,12 @@ use yii\helpers\Html;
     <?= Html::csrfMetaTags() ?>
 </head>
     <body>
-
+        <p>注册</p>
+        <?php \yii\widgets\ActiveForm::begin() ?>
+        <div><label><span>用户名:</span><input type="text" id="username" name="username" /></label></div>
+        <div><label><span>密码:</span><input type="password" id="psw" name="psw" /></label></div>
+        <div><label><span>确认密码:</span><input type="password" id="psw-again" name="psw-again" /></label></div>
+        <input type="submit" value="提交注册" />
+        <?php \yii\widgets\ActiveForm::end() ?>
     </body>
 </html>

@@ -27,6 +27,11 @@ class DefaultController extends Controller
     public function actionRegister()
     {
         $this->layout = false;
+        if(\Yii::$app->request->isPost){
+            $username = \Yii::$app->request->post('username');
+            $password = \Yii::$app->request->post('psw');
+            //todo: 写个注册，不要懒嘛，一回生二回熟
+        }
         return $this->render('register');
     }
 }
