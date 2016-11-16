@@ -5,12 +5,13 @@
  * Date: 2016/4/9 0009
  * Time: 14:41
  */
-namespace myapp\rainday;
+//namespace myapp\rainday;
+//
+//include("classA.inc");
+//
+//$s = new A();
+//$s = serialize($s);
+//
+//file_put_contents("store", $s);
 
-include("classA.inc");
-
-$s = new A();
-$s = serialize($s);
-
-file_put_contents("store", $s);
-
+phpinfo();

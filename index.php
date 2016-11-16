@@ -1,4 +1,5 @@
 ﻿<?php
+
 require ("bll/category.php");
 require ("bll/Goods.php");
 require ("SqlHelp.php");
